@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/FavIcon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
+    <title>Chillout | Login</title>
+  </head>
+  <body>
+    <section class="login">
+      <div class="login_image">
+        <img src="./assets/Screen-Image.png" alt="" />
+      </div>
+      <div class="login_form_container">
+        <h1 class="login_title">Bem-vindo(a) de volta!</h1>
+        <form
+          id="login_form"
+          onsubmit="addIdToPath('login_form', 'http://localhost:6789/user/post/')"
+          method="post"
+        >
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" required />
+
+          <input class="btn_logar" type="submit" value="Enviar" />
+          <p class="login_info_cadastrar">
+            Não possui conta?
+            <a href="./cadastro.html" class="link_cadastro">Clique aqui.</a>
+          </p>
+        </form>
+      </div>
+      <a href="./index.html" class="close_login">
+        <span class="material-symbols-outlined">close</span>
+      </a>
+    </section>
+  </body>
+</html>

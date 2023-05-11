@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/FavIcon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/perfil.css" />
+    <title>Chillout | Perfil</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo"><img src="./assets/Logo.svg" alt="logo" /></div>
+      <nav>
+        <ul class="menu">
+          <li class="menu_opcao"><a href="./index.html">Home</a></li>
+          <li class="menu_opcao"><a href="./todo.html">To-Do</a></li>
+          <li class="menu_opcao"><a href="./draw.html">Desenhar</a></li>
+          <li class="menu_opcao"><a href="./paleta.html">Paleta</a></li>
+        </ul>
+      </nav>
+      <button class="btn_logado">
+        <span class="material-symbols-outlined">person</span>
+      </button>
+    </header>
+    <main class="main_alterado">
+      <section class="perfil_image">
+        <img src="./assets/Perfil-Image-Default.png" alt="" />
+        <a href="#" class="alterate_image"
+          >Alterar foto <span class="material-symbols-outlined">edit</span></a
+        >
+      </section>
+      <section class="infos">
+        <div class="username_container_perfil">
+          <h1 class="username_perfil">Carlos Coelho</h1>
+          <span class="material-symbols-outlined">edit</span>
+        </div>
+        <a href="#" class="alterate_password">Alterar senha</a>
+        <ul class="tools_perfil">
+          <li class="tool_perfil todo">
+            <span class="material-symbols-outlined">list</span>
+            <a href="#" class="link_perfil_todo">Minhas listas</a>
+          </li>
+          <li class="tool_perfil draw">
+            <span class="material-symbols-outlined">draw</span>
+            <a href="#" class="link_perfil_draw">Desenhar</a>
+          </li>
+          <li class="tool_perfil palette">
+            <span class="material-symbols-outlined">palette</span>
+            <a href="#" class="link_perfil_palette">Explorar minha paleta</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

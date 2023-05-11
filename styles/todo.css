@@ -126,6 +126,87 @@ main {
   width: 600px;
 }
 
+.list_title {
+  margin-top: 2rem;
+  text-decoration: underline;
+}
+
+.tasks_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.task {
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 600px;
+}
+
+.urgency_task_list {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  width: 1rem;
+}
+
+.urgent {
+  background: #f04248;
+}
+
+.little_urgent {
+  background: #fdcd21;
+}
+
+.not_urgent {
+  background: #79e34f;
+}
+
+.description_task_list {
+  color: var(--text-color);
+}
+
+.btns_task_list {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  height: 24px;
+}
+
+input[type="checkbox"] {
+  height: 1rem;
+  width: 1rem;
+}
+
+.btns_task_list form {
+  height: 24px;
+  width: 24px;
+}
+
+.btn_delete_task {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  height: 8px;
+  transition: 0.3s;
+  width: 1rem;
+}
+
+.btn_delete_task:hover {
+  color: var(--second-color);
+}
+
 .list_cadastro {
   align-items: center;
   background: rgba(0, 0, 0, 0.5);

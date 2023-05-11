@@ -1,7 +1,7 @@
 .cadastro {
   align-items: center;
   background: var(--primary-color);
-  display: none;
+  display: flex;
   height: 100%;
   justify-content: space-around;
   position: absolute;

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/FavIcon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/cadastro.css" />
+    <title>Chillout | Cadastro</title>
+  </head>
+  <body>
+    <section class="cadastro">
+      <div class="cadastro_form_container">
+        <h1 class="cadastro_title">Seja bem-vindo(a)!</h1>
+        <form
+          id="cadastro_form"
+          onsubmit="addIdToPath('cadastro_form', 'http://localhost:6789/user/post/')"
+          method="post"
+        >
+          <label for="username">Usuário</label>
+          <input type="text" id="username_cadastro" name="username" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="senha">Senha</label>
+          <input type="password" id="senha_cadastro" name="senha" required />
+
+          <label for="senha_confirm">Confirmar senha</label>
+          <input
+            type="password"
+            id="senha_confirm"
+            name="senha_confirm"
+            required
+          />
+
+          <input class="btn_cadastrar" type="submit" value="Enviar" />
+        </form>
+      </div>
+      <div class="cadastro_image">
+        <img src="./assets/People-Like-Image.png" alt="" />
+      </div>
+      <a href="./login.html" class="close_cadastro">
+        <span class="material-symbols-outlined">close</span>
+      </a>
+    </section>
+  </body>
+</html>

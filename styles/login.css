@@ -1,7 +1,7 @@
 .login {
   align-items: center;
   background: var(--second-color);
-  display: none;
+  display: flex;
   height: 100%;
   justify-content: space-around;
   position: absolute;

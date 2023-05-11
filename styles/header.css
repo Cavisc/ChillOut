@@ -38,20 +38,46 @@ header {
 }
 
 .btn_login {
+  align-items: center;
   background: var(--second-color);
   border: none;
   border-radius: 10px;
   color: var(--base-color);
   cursor: pointer;
+  display: flex;
   font-weight: 800;
   height: 50px;
+  justify-content: center;
   outline: none;
   padding: 0.5rem;
+  text-decoration: none;
   transition: 0.3s;
   width: 100px;
 }
 
 .btn_login:hover {
+  background-color: var(--base-color);
+  color: var(--second-color);
+}
+
+.btn_logado {
+  align-items: center;
+  background: var(--second-color);
+  border: none;
+  border-radius: 50%;
+  color: var(--base-color);
+  cursor: pointer;
+  display: flex;
+  font-weight: 800;
+  height: 50px;
+  justify-content: center;
+  outline: none;
+  padding: 0.5rem;
+  transition: all 0.3s;
+  width: 50px;
+}
+
+.btn_logado:hover {
   background-color: var(--base-color);
   color: var(--second-color);
 }

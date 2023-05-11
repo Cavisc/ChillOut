@@ -1,0 +1,44 @@
+.main_alterado {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  height: 80vh;
+  margin: 0 5rem;
+}
+
+.perfil_image {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil_image img {
+  border-radius: 20px;
+  max-width: 600px;
+}
+
+.alterate_image {
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  width: 200px;
+}
+
+.alterate_image:hover {
+  background: var(--text-color);
+  color: var(--base-color);
+}
+
+.infos {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

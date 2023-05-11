@@ -37,7 +37,7 @@
           <li class="menu_opcao"><a href="./paleta.html">Paleta</a></li>
         </ul>
       </nav>
-      <button class="btn_login">Entrar</button>
+      <a href="./login.html" class="btn_login">Entrar</a>
     </header>
     <main>
       <section class="hero">
@@ -185,69 +185,6 @@
         </div>
       </section>
     </main>
-    <section class="login">
-      <div class="login_image">
-        <img src="./assets/Screen-Image.png" alt="" />
-      </div>
-      <div class="login_form_container">
-        <h1 class="login_title">Bem-vindo(a) de volta!</h1>
-        <form
-          id="login_form"
-          onsubmit="addIdToPath('login_form', 'http://localhost:6789/user/post/')"
-          method="post"
-        >
-          <label for="username">Usuário</label>
-          <input type="text" id="username" name="username" required />
-
-          <label for="senha">Senha</label>
-          <input type="password" id="senha" name="senha" required />
-
-          <input class="btn_logar" type="submit" value="Enviar" />
-          <p class="login_info_cadastrar">
-            Não possui conta?
-            <a href="#" class="link_cadastro">Clique aqui.</a>
-          </p>
-        </form>
-      </div>
-      <button class="close_login">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-    </section>
-    <section class="cadastro">
-      <div class="cadastro_form_container">
-        <h1 class="cadastro_title">Seja bem-vindo(a)!</h1>
-        <form
-          id="cadastro_form"
-          onsubmit="addIdToPath('cadastro_form', 'http://localhost:6789/user/post/')"
-          method="post"
-        >
-          <label for="username">Usuário</label>
-          <input type="text" id="username_cadastro" name="username" required />
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="senha">Senha</label>
-          <input type="password" id="senha_cadastro" name="senha" required />
-
-          <label for="senha_confirm">Confirmar senha</label>
-          <input
-            type="password"
-            id="senha_confirm"
-            name="senha_confirm"
-            required
-          />
-
-          <input class="btn_cadastrar" type="submit" value="Enviar" />
-        </form>
-      </div>
-      <div class="cadastro_image">
-        <img src="./assets/People-Like-Image.png" alt="" />
-      </div>
-      <button class="close_cadastro">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-    </section>
     <footer>
       <p class="copy">&copy Chillout 2023</p>
     </footer>
