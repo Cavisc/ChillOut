@@ -1,0 +1,57 @@
+header {
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.logo > img {
+  height: 3rem;
+  max-width: 100px;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.menu_opcao a {
+  color: var(--base-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.menu_opcao a:hover {
+  color: var(--second-color);
+}
+
+.menu_opcao a.active {
+  color: var(--second-color);
+  text-decoration: underline;
+}
+
+.btn_login {
+  background: var(--second-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--base-color);
+  cursor: pointer;
+  font-weight: 800;
+  height: 50px;
+  outline: none;
+  padding: 0.5rem;
+  transition: 0.3s;
+  width: 100px;
+}
+
+.btn_login:hover {
+  background-color: var(--base-color);
+  color: var(--second-color);
+}

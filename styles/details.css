@@ -1,0 +1,19 @@
+.details {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.balls img {
+  position: relative;
+  top: -120px;
+  width: 250px;
+}
+
+.line img {
+  position: absolute;
+  right: 100px;
+  top: 0;
+  width: 200px;
+}

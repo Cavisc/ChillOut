@@ -1,0 +1,266 @@
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.infos_left {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
+}
+
+.lists {
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.7rem;
+  width: 200px;
+}
+
+.lists_itens {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lists_item {
+  list-style: none;
+}
+
+.lists_link {
+  color: var(--azul-escuro);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.lists_link:hover {
+  color: var(--verde);
+}
+
+.active {
+  color: var(--second-color);
+  text-decoration: underline;
+}
+
+.btn_add_list {
+  align-items: center;
+  background: var(--second-color);
+  border: none;
+  border-radius: 100%;
+  color: var(--base-color);
+  cursor: pointer;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  outline: none;
+  text-decoration: none;
+  transition: 0.3s;
+  width: 4rem;
+}
+
+.btn_add_list:hover {
+  background: var(--primary-color);
+}
+
+.subtitle {
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.subtitle_itens {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 1rem;
+  list-style: none;
+}
+
+.subtitle_item {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.subtitle_circle {
+  border-radius: 100%;
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+.c1 {
+  background-color: #79e34f;
+}
+
+.c2 {
+  background-color: #fdcd21;
+}
+
+.c3 {
+  background-color: #f04248;
+}
+
+.list {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+
+.list_empty_image {
+  border-bottom: 5px solid var(--primary-color);
+  width: 600px;
+}
+
+.list_cadastro {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 99;
+}
+
+#list_cadastro_form {
+  background: var(--primary-color);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 8rem;
+  position: relative;
+  max-height: 90%;
+}
+
+#list_cadastro_form label {
+  color: var(--text-color);
+  font-weight: 550;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+#list_cadastro_form input {
+  background: var(--base-color);
+  border: none;
+  border-radius: 20px;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  outline: none;
+  padding: 1rem;
+  width: 100%;
+}
+
+#list_cadastro_form .btn_add_task {
+  background: var(--second-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  max-width: 200px;
+  transition: all 0.3s;
+}
+
+#list_cadastro_form .btn_add_task:hover {
+  background: var(--base-color);
+}
+
+.tasks_cadastro {
+  overflow: hidden scroll;
+}
+
+.tasks_cadastro::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.tasks_cadastro::-webkit-scrollbar-track {
+  background: var(--base-color);
+  border-radius: 20px;
+  margin-left: 0.5rem;
+}
+
+.tasks_cadastro::-webkit-scrollbar-thumb {
+  background-color: var(--second-color);
+  border: none;
+  border-radius: 20px;
+}
+
+.task_cadastro {
+  background: var(--second-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 500px;
+}
+
+.task_cadastro select {
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  padding: 0.5rem;
+  width: 200px;
+}
+
+.emergencia {
+  background: #f04248;
+}
+
+.pouca-emergencia {
+  background: #fdcd21;
+}
+
+.nao-emergencia {
+  background: #79e34f;
+}
+
+#list_cadastro_form .btn_cadastrar_list {
+  background: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--base-color);
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  max-width: 200px;
+  padding: 1rem;
+  transition: all 0.3s;
+}
+
+#list_cadastro_form .btn_cadastrar_list:hover {
+  background: var(--second-color);
+}
+
+.btn_close_list_cadastro {
+  background: var(--primary-color);
+  border: none;
+  color: var(--base-color);
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: all 0.3s;
+}
+
+.btn_close_list_cadastro:hover {
+  color: var(--text-color);
+}

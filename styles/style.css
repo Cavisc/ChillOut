@@ -1,0 +1,66 @@
+:root {
+  --base-color: #fefee3;
+  --primary-color: #b9c6ae;
+  --second-color: #348aa7;
+  --text-color: #090c08;
+
+  --rubik: "Rubik", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--rubik);
+}
+
+body {
+  background-color: var(--base-color);
+}
+
+*::-webkit-scrollbar {
+  width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--second-color);
+}
+
+h1 {
+  color: var(--text-color);
+  font-size: 3rem;
+}
+
+h2,
+h3 {
+  color: var(--text-color);
+}
+
+p {
+  color: var(--text-color);
+}
+
+main {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+}

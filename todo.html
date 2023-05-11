@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/FavIcon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="./styles/cadastro.css" />
+    <link rel="stylesheet" href="./styles/todo.css" />
+    <title>Chillout | To-Do</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo"><img src="./assets/Logo.svg" alt="logo" /></div>
+      <nav>
+        <ul class="menu">
+          <li class="menu_opcao"><a href="./index.html">Home</a></li>
+          <li class="menu_opcao"><a href="#" class="active">To-Do</a></li>
+          <li class="menu_opcao"><a href="./draw.html">Desenhar</a></li>
+          <li class="menu_opcao"><a href="./paleta.html">Paleta</a></li>
+        </ul>
+      </nav>
+      <button class="btn_login">Entrar</button>
+    </header>
+    <main class="main_alterado">
+      <section class="infos_left">
+        <div class="lists">
+          <h3 class="lists_title">Minhas Listas:</h3>
+          <ul class="lists_itens" id="lists">
+            <span class="material-symbols-outlined">emoticon</span>
+          </ul>
+        </div>
+
+        <button class="btn_add_list" id="btn_add_list">
+          <span class="material-symbols-outlined">add</span>
+        </button>
+
+        <div class="subtitle">
+          <h4 class="subtitle_title">Legenda:</h4>
+          <ul class="subtitle_itens">
+            <li class="subtitle_item">
+              <div class="subtitle_circle c1"></div>
+              Não Urgente
+            </li>
+            <li class="subtitle_item">
+              <div class="subtitle_circle c2"></div>
+              Pouco Urgente
+            </li>
+            <li class="subtitle_item">
+              <div class="subtitle_circle c3"></div>
+              Urgente
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="list">
+        <img
+          src="./assets/Man-Notebook-Image.png"
+          alt="Personagem segurando notebook"
+          class="list_empty_image"
+        />
+      </section>
+    </main>
+    <section class="list_cadastro">
+      <form id="list_cadastro_form">
+        <label for="title">Título</label>
+        <input type="text" name="title" id="title" required />
+        <button class="btn_add_task" type="button">Add tarefa</button>
+        <div class="tasks_cadastro">
+          <div class="task_cadastro">
+            <label class="urgency">Urgência</label>
+            <select name="urgency">
+              <option class="nao-emergencia" value="nao-emergencia">
+                Não Urgente
+              </option>
+              <option class="pouca-emergencia" value="pouca-emergencia">
+                Pouco Urgente
+              </option>
+              <option class="emergencia" value="emergencia">Urgente</option>
+            </select>
+            <label class="description" for="description_task">Descrição</label>
+            <input type="text" id="description_task" />
+          </div>
+        </div>
+        <button class="btn_cadastrar_list" type="button">Salvar</button>
+        <button class="btn_close_list_cadastro">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </form>
+    </section>
+    <section class="login">
+      <div class="login_image">
+        <img src="./assets/Screen-Image.png" alt="" />
+      </div>
+      <div class="login_form_container">
+        <h1 class="login_title">Bem-vindo(a) de volta!</h1>
+        <form
+          id="login_form"
+          onsubmit="addIdToPath('login_form', 'http://localhost:6789/user/post/')"
+          method="post"
+        >
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" required />
+
+          <input class="btn_logar" type="submit" value="Enviar" />
+          <p class="login_info_cadastrar">
+            Não possui conta?
+            <a href="#" class="link_cadastro">Clique aqui.</a>
+          </p>
+        </form>
+      </div>
+      <button class="close_login">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </section>
+    <section class="cadastro">
+      <div class="cadastro_form_container">
+        <h1 class="cadastro_title">Seja bem-vindo(a)!</h1>
+        <form
+          id="cadastro_form"
+          onsubmit="addIdToPath('cadastro_form', 'http://localhost:6789/user/post/')"
+          method="post"
+        >
+          <label for="username">Usuário</label>
+          <input type="text" id="username_cadastro" name="username" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="senha">Senha</label>
+          <input type="password" id="senha_cadastro" name="senha" required />
+
+          <label for="senha_confirm">Confirmar senha</label>
+          <input
+            type="password"
+            id="senha_confirm"
+            name="senha_confirm"
+            required
+          />
+
+          <input class="btn_cadastrar" type="submit" value="Enviar" />
+        </form>
+      </div>
+      <div class="cadastro_image">
+        <img src="./assets/People-Like-Image.png" alt="" />
+      </div>
+      <button class="close_cadastro">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </section>
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/todo.js"></script>
+  </body>
+</html>

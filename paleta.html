@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/FavIcon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght@20,400"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="./styles/cadastro.css" />
+    <link rel="stylesheet" href="./styles/paleta.css" />
+    <title>Chillout | Paleta</title>
+  </head>
+  <body class="body_alterado">
+    <header>
+      <div class="logo"><img src="./assets/Logo.svg" alt="logo" /></div>
+      <nav>
+        <ul class="menu">
+          <li class="menu_opcao"><a href="./index.html">Home</a></li>
+          <li class="menu_opcao"><a href="./todo.html">To-Do</a></li>
+          <li class="menu_opcao"><a href="./draw.html">Desenhar</a></li>
+          <li class="menu_opcao"><a href="#" class="active">Paleta</a></li>
+        </ul>
+      </nav>
+      <button class="btn_login">Entrar</button>
+    </header>
+    <main>
+      <div class="content" id="ferramenta1">
+        <div id="main">
+          <div id="gridprincipal" class="box">
+            <div id="gridcores">
+              <div id="corbut" class="cor adccor">
+                <span>+</span>
+              </div>
+            </div>
+            <div id="lateral">
+              <div id="selectcolor" class="box"></div>
+              <div id="colorinfo" class="box">
+                <h3 id="corNome">Selecione Cor</h3>
+                <h3 id="corHex">HEX</h3>
+                <h3 id="corRGB">RGB</h3>
+              </div>
+              <div id="editBotoes">
+                <div id="editar" class="botao"><span>Editar</span></div>
+                <div id="remover" class="botao"><span>Remover</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="menuNovaCor">
+            <div id="menu">
+              <div id="menuConteudo">
+                <h1 class="menuTitle">Titulo</h1>
+                <div class="menuFecha">X</div>
+                <h2>Nome</h2>
+                <input type="text" class="nomeCor" />
+                <h2>Cor</h2>
+                <input type="color" class="corCor" name="corInput" id="" />
+                <button class="buttonForm">Pronto</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="login">
+      <div class="login_image">
+        <img src="./assets/Screen-Image.png" alt="" />
+      </div>
+      <div class="login_form_container">
+        <h1 class="login_title">Bem-vindo(a) de volta!</h1>
+        <form
+          id="login_form"
+          onsubmit="addIdToPath('login_form', 'http://localhost:6789/user/post/')"
+          method="post"
+        >
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" required />
+
+          <input class="btn_logar" type="submit" value="Enviar" />
+          <p class="login_info_cadastrar">
+            Não possui conta?
+            <a href="#" class="link_cadastro">Clique aqui.</a>
+          </p>
+        </form>
+      </div>
+      <button class="close_login">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </section>
+    <section class="cadastro">
+      <div class="cadastro_form_container">
+        <h1 class="cadastro_title">Seja bem-vindo(a)!</h1>
+        <form
+          id="cadastro_form"
+          onsubmit="addIdToPath('cadastro_form', 'http://localhost:6789/user/post/')"
+          method="post"
+        >
+          <label for="username">Usuário</label>
+          <input type="text" id="username_cadastro" name="username" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="senha">Senha</label>
+          <input type="password" id="senha_cadastro" name="senha" required />
+
+          <label for="senha_confirm">Confirmar senha</label>
+          <input
+            type="password"
+            id="senha_confirm"
+            name="senha_confirm"
+            required
+          />
+
+          <input class="btn_cadastrar" type="submit" value="Enviar" />
+        </form>
+      </div>
+      <div class="cadastro_image">
+        <img src="./assets/People-Like-Image.png" alt="" />
+      </div>
+      <button class="close_cadastro">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </section>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/paleta.js"></script>
+  </body>
+</html>

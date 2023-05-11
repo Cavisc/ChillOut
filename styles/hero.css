@@ -1,0 +1,26 @@
+.hero {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.secondary.big {
+  font-size: 4.5rem;
+}
+
+.hero_info {
+  margin-top: 1rem;
+}
+
+.hero_image {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hero_image img {
+  height: 550px;
+  width: 550px;
+}
