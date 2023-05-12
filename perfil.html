@@ -38,9 +38,19 @@
     <main class="main_alterado">
       <section class="perfil_image">
         <img src="./assets/Perfil-Image-Default.png" alt="" />
-        <a href="#" class="alterate_image"
-          >Alterar foto <span class="material-symbols-outlined">edit</span></a
-        >
+        <div class="alterate_image_container">
+          <span href="#" class="alterate_image">
+            <span class="material-symbols-outlined">edit</span>
+            Alterar foto de perfil:
+          </span>
+          <form
+            id="image_form"
+            action="http://localhost:6789/user/update/"
+            method="get"
+          >
+            <input type="file" name="alterate_image" id="alterate_image" />
+          </form>
+        </div>
       </section>
       <section class="infos">
         <div class="username_container_perfil">
@@ -73,5 +83,47 @@
         </ul>
       </section>
     </main>
+    <section class="pop_up_perfil">
+      <form
+        id="perfil_password_form"
+        action="http://localhost:6789/user/update/"
+        method="get"
+      >
+        <label for="password">Senha atual</label>
+        <input type="password" name="password" id="password" required />
+        <label for="new_password">Nova senha</label>
+        <input type="password" name="new_password" id="new_password" required />
+        <button class="btn_update_password" type="submit">Alterar senha</button>
+        <button class="btn_close_password_form" type="button">
+          <span id="close_pass" class="material-symbols-outlined">close</span>
+        </button>
+      </form>
+      <form
+        id="perfil_name_form"
+        action="http://localhost:6789/user/update/"
+        method="get"
+      >
+        <label for="new_name">Novo nome</label>
+        <input type="text" name="new_name" id="new_name" required />
+        <button class="btn_update_name" type="submit">Alterar senha</button>
+        <button class="btn_close_name_form" type="button">
+          <span id="close_name" class="material-symbols-outlined">close</span>
+        </button>
+      </form>
+      <form
+        id="perfil_delete_form"
+        action="http://localhost:6789/user/delete/"
+        method="get"
+      >
+        <label>Deseja excluir sua conta?</label>
+        <input type="submit" name="delete" id="delete" value="Sim" required />
+        <button class="btn_close_del_form" type="button">
+          <span id="close_del" class="material-symbols-outlined">close</span>
+        </button>
+      </form>
+    </section>
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/perfil.js"></script>
   </body>
 </html>

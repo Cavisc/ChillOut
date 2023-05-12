@@ -17,22 +17,51 @@
   max-width: 600px;
 }
 
-.alterate_image {
-  align-items: center;
+.alterate_image_container {
   background: var(--primary-color);
   border-radius: 10px;
-  color: var(--text-color);
+  color: var(--base-color);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin-top: 1rem;
   padding: 1rem;
-  text-decoration: none;
-  transition: all 0.3s;
-  width: 200px;
+  width: 300px;
 }
 
-.alterate_image:hover {
-  background: var(--text-color);
+.alterate_image {
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  color: var(--text-color);
+  display: flex;
+  font-weight: 700;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+input[type="file"] {
+  border: none;
+  color: var(--second-color);
+  font-size: 12px;
+  padding: 10px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background-color: var(--base-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-color);
+  font-family: var(--rubik);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: var(--text-color);
   color: var(--base-color);
 }
 
@@ -116,4 +145,143 @@
 
 .tool_perfil:hover span {
   color: var(--base-color);
+}
+
+.pop_up_perfil {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 99;
+}
+
+#perfil_password_form,
+#perfil_name_form,
+#perfil_delete_form {
+  background: var(--primary-color);
+  border-radius: 25px;
+  display: none;
+  flex-direction: column;
+  padding: 8rem;
+  position: relative;
+  max-height: 90%;
+}
+
+#perfil_password_form label,
+#perfil_name_form label,
+#perfil_delete_form label {
+  color: var(--text-color);
+  font-weight: 550;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+#perfil_password_form input,
+#perfil_name_form input,
+#perfil_delete_form input {
+  background: var(--base-color);
+  border: none;
+  border-radius: 20px;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  outline: none;
+  padding: 1rem;
+  width: 100%;
+}
+
+#perfil_password_form .btn_update_password {
+  background: var(--second-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  max-width: 200px;
+  transition: all 0.3s;
+}
+
+#perfil_password_form .btn_update_password:hover {
+  background: var(--base-color);
+}
+
+.btn_close_password_form {
+  background: var(--primary-color);
+  border: none;
+  color: var(--base-color);
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: all 0.3s;
+}
+
+.btn_close_password_form:hover {
+  color: var(--text-color);
+}
+
+#perfil_name_form .btn_update_name {
+  background: var(--second-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  max-width: 200px;
+  transition: all 0.3s;
+}
+
+#perfil_name_form .btn_update_name:hover {
+  background: var(--base-color);
+}
+
+.btn_close_name_form {
+  background: var(--primary-color);
+  border: none;
+  color: var(--base-color);
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: all 0.3s;
+}
+
+.btn_close_name_form:hover {
+  color: var(--text-color);
+}
+
+#delete {
+  background: var(--second-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#delete:hover {
+  background: var(--text-color);
+  color: var(--base-color);
+}
+
+.btn_close_del_form {
+  background: var(--primary-color);
+  border: none;
+  color: var(--base-color);
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: all 0.3s;
+}
+
+.btn_close_del_form:hover {
+  color: var(--text-color);
 }
