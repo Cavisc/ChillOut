@@ -228,7 +228,7 @@ section {
   z-index: -99;
 }
 
-.drawings {
+.drawings_container {
   background: var(--second-color);
   display: flex;
   flex-wrap: wrap;
