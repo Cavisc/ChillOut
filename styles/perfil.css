@@ -37,8 +37,83 @@
 }
 
 .infos {
-  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.username_container_perfil {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.username_container_perfil span {
+  background: var(--second-color);
+  border-radius: 50%;
+  color: var(--base-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: 0.3s;
+}
+
+.username_container_perfil span:hover {
+  background: var(--text-color);
+}
+
+.query_container_perfil {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.query {
+  align-items: center;
+  color: var(--second-color);
+  display: flex;
+  flex-direction: row;
+  font-weight: 700;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.query:hover {
+  color: var(--text-color);
+}
+
+.tools_perfil {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.tool_perfil {
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100px;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+  width: 100px;
+}
+
+.tool_perfil:hover {
+  background: var(--second-color);
+}
+
+.tool_perfil span {
+  color: var(--text-color);
+  font-weight: 900;
+  transition: 0.3s;
+}
+
+.tool_perfil:hover span {
+  color: var(--base-color);
 }
