@@ -227,3 +227,23 @@ section {
   width: 200px;
   z-index: -99;
 }
+
+.drawings {
+  background: var(--second-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  height: 100%;
+  margin: 1rem;
+  width: 100%;
+}
+
+.drawing {
+  background: var(--primary-color);
+  border-radius: 5px;
+  padding: 1rem 2rem 2rem;
+}
+
+.drawing img {
+  width: 200px;
+}
