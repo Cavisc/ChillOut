@@ -1,4 +1,4 @@
-const dbMock = {
+const colorsFixed = {
   cores: [
     {
       id: 0,
@@ -83,218 +83,145 @@ const dbMock = {
   ],
 };
 
-var current;
+let cores = colorsFixed.cores;
+let currentColorId = 0;
+const colors = document.querySelector(".colors");
+const btnAdd = document.querySelector(".add_color");
+const btnEdit = document.querySelector(".color_edit");
+const btnDel = document.querySelector(".color_delete");
+const btnSI = document.querySelector(".suggestion_color");
+const btnSendInfosSI = document.querySelector(".btn_send_infos");
+const containerForms = document.querySelector(".add_color_container");
+const addForm = document.querySelector("#add_color_form");
+const infoColor = document.querySelector(".info_content");
+const editForm = document.querySelector("#edit_color_form");
+const btnCloseAdd = document.querySelector(".btn_close_add_color");
+const btnCloseUpdate = document.querySelector(".btn_close_edit_color");
+const btnCloseSug = document.querySelector(".btn_close_suggestion_color");
+const SIForm = document.querySelector("#suggestion_form");
+const SIContent = document.querySelector(".SI_content");
 
-function clicarCores() {
-  let cor = document.getElementsByClassName("cor");
+infoColor.innerHTML = `
+          <div class="color_demo max" style="background:${
+            cores[currentColorId].hex
+          }"></div>
+          <h2 class="info_color_name">${cores[currentColorId].nome}</h2>
+          <div class="info_values">
+            <p>HEX: <span class="info_color_hex_val">${
+              cores[currentColorId].hex
+            }</span></p>
+            <p>RGB: <span class="info_color_rgb_val">(${hexToRgb(
+              cores[currentColorId].hex
+            )})</span></p>
+          </div>
+    `;
 
-  for (let i = 0; i < cor.length; i++) {
-    cor[i].addEventListener(
-      "click",
-      (cor_click = (event) => {
-        if (!event.target.classList[0]) {
-          const modal = document.querySelector("#menuNovaCor");
-          const title = document.querySelector(".menuTitle");
+btnAdd.addEventListener("click", (e) => {
+  containerForms.style.display = "flex";
+  addForm.style.display = "flex";
+});
 
-          fechaForm();
+btnCloseAdd.addEventListener("click", (e) => {
+  containerForms.style.display = "none";
+  addForm.style.display = "none";
+});
 
-          modal.style.display = "block";
+btnEdit.addEventListener("click", (e) => {
+  containerForms.style.display = "flex";
+  editForm.style.display = "flex";
+  let colorName = document.querySelector("#name_color_edit");
+  let colorVal = document.querySelector("#value_color_edit");
+  colorName.value = cores[currentColorId].nome;
+  colorVal.value = cores[currentColorId].hex;
+});
 
-          return;
-        }
+btnCloseUpdate.addEventListener("click", (e) => {
+  containerForms.style.display = "none";
+  editForm.style.display = "none";
+});
 
-        let caixaPreview = document.getElementById("selectcolor");
-        let nome = document.getElementById("corNome");
-        let hex = document.getElementById("corHex");
-        let rgb = document.getElementById("corRGB");
+btnSI.addEventListener("click", () => {
+  containerForms.style.display = "flex";
+  SIForm.style.display = "flex";
+});
 
-        current = dbMock.cores[i].id;
+btnCloseSug.addEventListener("click", () => {
+  window.location.reload();
+});
 
-        caixaPreview.style.background = dbMock.cores[i].hex;
-        caixaPreview.style.boxShadow = "inset 0 0 10px #292928";
-        nome.innerText = dbMock.cores[i].nome;
-        hex.innerText = `HEX: ${dbMock.cores[i].hex}`;
-        rgb.innerText = `RGB: (${dbMock.cores[i].rgb.red},${dbMock.cores[i].rgb.green},${dbMock.cores[i].rgb.blue})`;
+btnSendInfosSI.addEventListener("click", () => {
+  SIContent.innerHTML = `
+  <label>Baseado nas suas respostas eu sugiro essa cor:</label>
+  <input
+  type="color"
+  name="value_color_suggestion"
+  id="value_color_suggestion"
+  disabled
+  />
+  <label class="suggestion_feedback">O que achou?</label>
+  <div class="suggestion_btns">
+      <button class="btn_suggestion_color" type="submit">Salvar</button>
+      <button class="btn_nosuggestion_color" type="button">
+        Não gostei
+      </button>
+  </div>
+  `;
+});
 
-        exibirBotoes();
-        exibirCores();
-        clicarCores();
-      })
-    );
+//Monta box com info da cor ativa
+colors.addEventListener("click", (e) => {
+  let currentColor = document.getElementById(`${currentColorId}`);
+  currentColor.classList.remove("active");
+  let elId = e.target.id[0];
+  if (elId >= 0) {
+    let color = document.getElementById(`${elId}`);
+    color.classList.add("active");
+    currentColorId = elId;
+    infoColor.innerHTML = `
+    <div class="color_demo max" style="background:${
+      cores[currentColorId].hex
+    }"></div>
+    <h2 class="info_color_name">${cores[currentColorId].nome}</h2>
+    <div class="info_values">
+      <p>HEX: <span class="info_color_hex_val">${
+        cores[currentColorId].hex
+      }</span></p>
+      <p>RGB: <span class="info_color_rgb_val">(${hexToRgb(
+        cores[currentColorId].hex
+      )})</span></p>
+    </div>
+            `;
   }
+});
+
+function hexToRgb(hex) {
+  hex = hex.replace("#", "");
+
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+
+  return `${r}, ${g}, ${b}`;
 }
 
-function exibirCores() {
-  let botao = `<div id="corbut" class="cor adccor">
-    <span>+</span>
-</div>`;
-  let str = "";
-  for (let i = 0; i < dbMock.cores.length; i++) {
-    let cor = dbMock.cores[i];
-    str += `<div class="cor" style="background: ${dbMock.cores[i].hex}"></div>\n`;
-  }
-  document.querySelector("#gridcores").innerHTML = str + botao;
-}
-
-function exibirBotoes() {
-  const botoes = document.querySelectorAll(".botao");
-  botoes[0].style.display = "inline-block";
-  botoes[1].style.display = "inline-block";
-}
-function esconderBotoes() {
-  const botoes = document.querySelectorAll(".botao");
-  botoes[0].style.display = "none";
-  botoes[1].style.display = "none";
-}
-
-const modal = document.querySelector("#menuNovaCor");
-
-function rgbHex(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
-    : null;
-}
-
-function addCor(nome, hex) {
-  var rgb = rgbHex(hex);
-
-  var novaCor = {
-    id: dbMock.cores.length + 1,
-    nome: nome,
-    hex: hex,
-    rgb: {
-      red: rgb.r,
-      green: rgb.g,
-      blue: rgb.b,
-    },
-  };
-  dbMock.cores.push(novaCor);
-  localStorage.setItem("cores", JSON.stringify(dbMock.cores));
-}
-
-function removeCor(id) {
-  let item = dbMock.cores.findIndex((obj) => {
-    return obj.id == id;
-  });
-  dbMock.cores.splice(item, 1);
-  localStorage.setItem("cores", JSON.stringify(dbMock.cores));
-
-  exibirCores();
-  clicarCores();
-}
-
-function editCor(id, nome, hex) {
-  let item = dbMock.cores.findIndex((obj) => {
-    return obj.id == id;
-  });
-
-  var rgb = rgbHex(hex);
-
-  dbMock.cores[item].nome = nome;
-  dbMock.cores[item].hex = hex;
-  dbMock.cores[item].rgb.blue = rgb.b;
-  dbMock.cores[item].rgb.green = rgb.g;
-  dbMock.cores[item].rgb.red = rgb.r;
-
-  localStorage.setItem("cores", JSON.stringify(dbMock.cores));
-}
-
-function reiniciarSeleção() {
-  let caixaPreview = document.getElementById("selectcolor");
-  let nome = document.getElementById("corNome");
-  let hex = document.getElementById("corHex");
-  let rgb = document.getElementById("corRGB");
-
-  caixaPreview.style.background = "none";
-  caixaPreview.style.boxShadow = "none";
-  nome.innerText = "Selecione Cor";
-  hex.innerText = `HEX`;
-  rgb.innerText = `RGB`;
-  esconderBotoes();
-}
-
-function fechaForm() {
-  const modal = document.querySelector("#menuNovaCor");
-  const nomeForm = document.querySelector(".nomeCor");
-  const corForm = document.querySelector(".corCor");
-  const title = document.querySelector(".menuTitle");
-
-  modal.style.display = "none";
-  nomeForm.value = "";
-  corForm.value = "#ffffff";
-  title.innerText = "Nova Cor";
-  formType = 0;
-}
-
-window.onload = function () {
-  var formType = 0;
-  let db = localStorage;
-  if (localStorage.getItem("cores") == null) {
-    localStorage.setItem("cores", JSON.stringify(dbMock.cores));
-    db = JSON.parse(localStorage.getItem("cores"));
-  } else {
-    db = JSON.parse(localStorage.getItem("cores"));
-    dbMock.cores = db;
-  }
-  exibirCores();
-  clicarCores();
-
-  const modal = document.querySelector("#menuNovaCor");
-  const nomeForm = document.querySelector(".nomeCor");
-  const corForm = document.querySelector(".corCor");
-  const enviarForm = document.querySelector(".buttonForm");
-  const deleteBut = document.querySelector("#remover");
-  const editBut = document.querySelector("#editar");
-  const title = document.querySelector(".menuTitle");
-
-  modal.addEventListener("click", (event) => {
-    const clickClass = event.target.classList[0];
-    const clickId = event.target.id;
-    if (clickClass == "menuFecha" || clickId == "menuNovaCor") {
-      fechaForm();
-    } else if (clickClass == "buttonForm") {
-      if (formType == 0) {
-        modal.style.display = "none";
-        addCor(nomeForm.value, corForm.value);
-        exibirCores();
-        clicarCores();
-      } else if (formType == 1) {
-        modal.style.display = "none";
-        editCor(current, nomeForm.value, corForm.value);
-        exibirCores();
-        clicarCores();
-        formType = 0;
-        reiniciarSeleção();
-      }
+function setColorsFixed() {
+  for (let i = 0; i < cores.length; i++) {
+    if (i == 0) {
+      colors.innerHTML += `
+              <a href="#" class="color active" id="${cores[i].id}">
+                <div class="color_demo min" id="${cores[i].id} demo" style="background:${cores[i].hex};"></div>
+                <span class="color_hex" id="${cores[i].id} val">${cores[i].hex}</span>
+              </a>
+            `;
+    } else {
+      colors.innerHTML += `
+              <a href="#" class="color" id="${cores[i].id}">
+                <div class="color_demo min" id="${cores[i].id} demo" style="background:${cores[i].hex};"></div>
+                <span class="color_hex" id="${cores[i].id} val">${cores[i].hex}</span>
+              </a>
+            `;
     }
-  });
+  }
+}
 
-  deleteBut.addEventListener("click", () => {
-    if (!current) return;
-    removeCor(current);
-
-    reiniciarSeleção();
-  });
-
-  editBut.addEventListener("click", () => {
-    let item = dbMock.cores.findIndex((obj) => {
-      return obj.id == current;
-    });
-
-    formType = 1;
-
-    const modal = document.querySelector("#menuNovaCor");
-
-    modal.style.display = "block";
-
-    title.innerText = "Editar";
-
-    nomeForm.value = dbMock.cores[item].nome;
-    corForm.value = dbMock.cores[item].hex;
-  });
-};
+document.body.onload = setColorsFixed;

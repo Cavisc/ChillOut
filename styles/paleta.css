@@ -2,189 +2,353 @@
   background: var(--second-color);
 }
 
-#gridprincipal {
-  text-align: center;
-  padding: 0px;
-  padding-top: 10%;
-}
-#lateral {
-  display: inline-block;
-  padding: 0px;
-  width: 375px;
-  vertical-align: top;
-}
-#gridcores {
-  margin-right: 20px;
-  width: 375px;
-  height: 320px;
-  background: white;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 20px;
-  padding: 5px 10px;
-  display: inline-block;
-  text-align: left;
-}
-.cor {
-  margin-top: 5px;
-  margin-right: 30px;
-  display: inline-block;
-  width: 56px;
-  height: 46px;
-  border: solid black 1px;
-  border-radius: 34.5px;
-  background: #5482db;
-  margin-bottom: 15px;
-  cursor: pointer;
-  vertical-align: top;
-}
-.adccor {
-  background: none;
-}
-.adccor > span {
-  display: block;
-  text-align: center;
-  font-size: 40px;
-}
-#selectcolor {
-  width: 300px;
-  height: 110px;
-  background: white;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 20px;
-  padding: 5px 10px;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-.box {
-  vertical-align: top;
-}
-#colorinfo {
-  width: 320px;
-  height: 120px;
-  background: white;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 20px;
-  padding: 5px 10px;
-  display: inline-block;
-  padding: 0px;
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  height: 80vh;
+  justify-content: center;
 }
 
-h3 {
-  border-style: solid;
-  border-color: black;
-  border-width: 0px;
-  border-top: 2px solid black;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-h2 {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-#editBotoes {
-  font-family: Arial, Helvetica, sans-serif;
-}
-.botao {
-  display: none;
-  width: 140px;
-  height: 60px;
-  margin-top: 20px;
-  background: white;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
+.colors_container {
+  background: var(--base-color);
   border-radius: 10px;
-  font-size: 25px;
-  cursor: pointer;
-}
-.botao:hover {
-  box-shadow: inset 0 0 10px #292928;
-}
-#editar {
-  background-color: orange;
-  margin-right: 25px;
-}
-#remover {
-  background-color: red;
-}
-.botao > span {
-  text-align: center;
-  display: block;
-  margin-top: 15px;
-}
-.cor:hover {
-  border: solid red 1px;
-  box-shadow: inset 0 0 10px #292928;
+  height: 500px;
+  width: 50%;
 }
 
-#menuConteudo button {
-  display: block;
-  width: 40%;
-  height: 40px;
-  margin: 20px auto;
-  background: linear-gradient(to right, #5947ff 5%, #3e1ac2 60%);
-  color: white;
-  border: 0;
-  cursor: pointer;
-  border-radius: 9px;
-  padding: 6px 10px;
-}
-
-#menuConteudo button:hover {
-  background: linear-gradient(to right, #9c68fd 10%, #4e2ec0 90%);
-  border: 1px solid black;
-}
-#menuNovaCor {
-  display: none;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
+.colors {
+  background: var(--base-color);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: 85%;
+  justify-content: center;
+  overflow: scroll;
+  padding: 2rem;
   width: 100%;
-  height: 100%;
 }
 
-#menu {
-  border-radius: 4px;
-  width: 100%;
-  max-width: 300px;
-  height: 100%;
-  max-height: 400px;
-  margin: 10% auto;
-  padding: 20px;
-  background: white;
+.color {
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 170px;
+  padding: 1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.color.active {
+  border: 2px solid var(--second-color);
+  color: var(--second-color);
+}
+
+.color:hover {
+  border-color: var(--second-color);
+}
+
+.color_demo {
+  border-radius: 10px;
+}
+
+.color_demo.min {
+  height: 100px;
+  width: 100px;
+}
+
+.color_hex {
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.color:hover .color_hex {
+  color: var(--second-color);
+}
+
+.colors_container_btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: left;
+  margin-left: 4rem;
+}
+
+.add_color,
+.suggestion_color {
+  align-items: center;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 600;
+  gap: 0.5rem;
+  outline: none;
+  padding: 0.5rem 1rem;
   position: relative;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.menuFecha {
-  color: #000;
-  font-weight: bolder;
-  font-size: 20px;
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  cursor: pointer;
-}
-.menuFecha:hover {
-  color: #3e1ac2;
+  text-transform: uppercase;
+  transition: 0.2s;
 }
 
-#menuConteudo h2 {
-  margin-left: 20px;
+.add_color span,
+.suggestion_color span {
+  font-size: 2rem;
 }
-#menuConteudo input {
-  margin-left: 20px;
-  width: 70%;
+
+.add_color:hover,
+.suggestion_color:hover {
+  background: var(--text-color);
+  color: var(--base-color);
 }
-.menuTitle {
-  text-align: center;
-  text-decoration: underline;
+
+.info_color {
+  align-items: center;
+  background: var(--base-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: center;
+  padding: 1rem;
+  width: 25%;
+}
+
+.info_content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.color_demo.max {
+  border: 3px solid var(--text-color);
+  height: 150px;
+  width: 150px;
+}
+
+.info_values {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.btns_color {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.color_edit,
+.color_delete {
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  gap: 2px;
+  height: 50px;
+  justify-content: center;
+  padding: 1rem;
+  width: 100px;
+  transition: 0.2s;
+}
+
+.color_edit {
+  background: var(--second-color);
+  color: var(--base-color);
+}
+
+.color_edit:hover,
+.color_delete:hover {
+  background: var(--text-color);
+  color: var(--base-color);
+}
+
+.color_delete {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.color_edit span,
+.color_delete span {
+  font-size: 1.2rem;
+}
+
+.add_color_container {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 99;
+}
+
+#add_color_form,
+#edit_color_form,
+#suggestion_form {
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 25px;
+  display: none;
+  flex-direction: column;
+  max-height: 90%;
+  padding: 8rem;
+  position: relative;
+}
+
+#add_color_form .add_color_title,
+#edit_color_form .edit_color_title {
+  margin-bottom: 1rem;
+}
+
+.SI_content {
+  display: flex;
+  flex-direction: column;
+}
+
+#add_color_form label,
+#edit_color_form label {
+  align-self: start;
+  color: var(--text-color);
+  font-weight: 550;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+#suggestion_form label {
+  align-self: start;
+  color: var(--text-color);
+  font-weight: 550;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+#suggestion_form .suggestion_feedback {
+  align-self: center;
+}
+
+#add_color_form input,
+#edit_color_form input,
+#suggestion_form input {
+  background: var(--base-color);
+  border: none;
+  border-radius: 20px;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  outline: none;
+  padding: 1rem;
+  width: 100%;
+}
+
+#suggestion_form input {
+  margin-bottom: 0;
+}
+
+#add_color_form input#value_color,
+#edit_color_form input#value_color_edit,
+#suggestion_form input#value_color_suggestion {
+  height: 200px;
+  width: 300px;
+}
+
+#suggestion_form input#value_color_suggestion {
+  align-self: center;
+  margin: 2rem 1rem;
+}
+
+#add_color_form .btn_cadastrar_color,
+#edit_color_form .btn_update_color,
+#suggestion_form .btn_suggestion_color,
+#suggestion_form .btn_nosuggestion_color,
+#suggestion_form .btn_send_infos {
+  background: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--base-color);
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+}
+
+#add_color_form .btn_cadastrar_color:hover,
+#edit_color_form .btn_update_color:hover,
+#suggestion_form .btn_suggestion_color:hover,
+#suggestion_form .btn_nosuggestion_color:hover,
+#suggestion_form .btn_send_infos:hover {
+  background: var(--second-color);
+}
+
+.btn_close_add_color,
+.btn_close_edit_color,
+.btn_close_suggestion_color {
+  background: var(--primary-color);
+  border: none;
+  color: var(--base-color);
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: all 0.3s;
+}
+
+.btn_close_add_color span,
+.btn_close_edit_color span,
+.btn_close_suggestion_color span {
+  font-size: 3rem;
+}
+
+.btn_close_add_color:hover,
+.btn_close_edit_color:hover,
+.btn_close_suggestion_color:hover {
+  color: var(--text-color);
+}
+
+#suggestion_form {
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#suggestion_form .suggestion_color_title {
+  align-self: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.question {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.op {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.suggestion_btns {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
 }

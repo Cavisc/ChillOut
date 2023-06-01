@@ -17,8 +17,6 @@
     />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/login.css" />
-    <link rel="stylesheet" href="./styles/cadastro.css" />
     <link rel="stylesheet" href="./styles/paleta.css" />
     <title>Chillout | Paleta</title>
   </head>
@@ -36,7 +34,7 @@
       <a href="./login.html" class="btn_login">Entrar</a>
     </header>
     <main>
-      <div class="content" id="ferramenta1">
+      <!--div class="content" id="ferramenta1">
         <div id="main">
           <div id="gridprincipal" class="box">
             <div id="gridcores">
@@ -72,8 +70,185 @@
             </div>
           </div>
         </div>
+      </div-->
+      <div class="colors_container">
+        <div class="colors">
+          <!--a href="#" class="color">
+            <div class="color_demo min"></div>
+            <span class="color_hex">#000000</span>
+          </a-->
+        </div>
+        <div class="colors_container_btns">
+          <button class="add_color">
+            <span class="material-symbols-outlined">add_box</span>
+            Add Cor
+          </button>
+          <button class="suggestion_color">
+            <span class="material-symbols-outlined">smart_toy</span>
+            Sugestão
+          </button>
+        </div>
+      </div>
+      <div class="info_color">
+        <div class="info_content">
+          <div class="color_demo max"></div>
+          <h2 class="info_color_name">Teste</h2>
+          <div class="info_values">
+            <p>HEX: <span class="info_color_hex_val">#000000</span></p>
+            <p>RGB: <span class="info_color_rgb_val">(0, 0, 0)</span></p>
+          </div>
+        </div>
+        <div class="btns_color">
+          <button class="color_edit">
+            <span class="material-symbols-outlined">edit</span>Editar
+          </button>
+          <button class="color_delete">
+            <span class="material-symbols-outlined">delete</span>Remover
+          </button>
+        </div>
       </div>
     </main>
+    <section class="add_color_container">
+      <form
+        id="add_color_form"
+        action="http://localhost:6789/cores"
+        method="post"
+      >
+        <h1 class="add_color_title">Nova cor</h1>
+        <label for="name_color">Nome</label>
+        <input type="text" name="name_color" id="name_color" required />
+        <label for="value_color">Cor</label>
+        <input type="color" name="value_color" id="value_color" required />
+        <button class="btn_cadastrar_color" type="submit">Salvar</button>
+        <button class="btn_close_add_color" type="button">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </form>
+
+      <form
+        id="edit_color_form"
+        action="http://localhost:6789/cores"
+        method="post"
+      >
+        <h1 class="edit_color_title">Editar cor</h1>
+        <label for="name_color_edit">Nome</label>
+        <input
+          type="text"
+          name="name_color_edit"
+          id="name_color_edit"
+          required
+        />
+        <label for="value_color_edit">Cor</label>
+        <input
+          type="color"
+          name="value_color_edit"
+          id="value_color_edit"
+          required
+        />
+        <button class="btn_update_color" type="submit">Salvar</button>
+        <button class="btn_close_edit_color" type="button">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </form>
+
+      <form id="suggestion_form">
+        <h1 class="suggestion_color_title">Sugestão de cor</h1>
+
+        <div class="SI_content">
+          <div class="question">
+            <label for="Q01">Qual a sua cor favorita?</label>
+            <input type="text" name="Q01" id="Q01" required />
+          </div>
+
+          <div class="question">
+            <label>Você prefere cores vibrantes ou cores mais suaves?</label>
+            <div class="op">
+              <input
+                type="radio"
+                name="Q02"
+                id="Q02a"
+                required
+                value="Vibrantes"
+              />
+              <label for="Q02a">Vibrantes</label>
+            </div>
+            <div class="op">
+              <input
+                type="radio"
+                name="Q02"
+                id="Q02b"
+                required
+                value="Suaves"
+              />
+              <label for="Q02b">Suaves</label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label>Qual é o seu tom preferido: quente ou frio?</label>
+            <div class="op">
+              <input
+                type="radio"
+                name="Q03"
+                id="Q03a"
+                required
+                value="Quente"
+              />
+              <label for="Q03a">Quente</label>
+            </div>
+            <div class="op">
+              <input type="radio" name="Q03" id="Q03b" required value="Frio" />
+              <label for="Q03b">Frio</label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label>Você prefere cores mais escuras ou mais claras?</label>
+            <div class="op">
+              <input
+                type="radio"
+                name="Q04"
+                id="Q04a"
+                required
+                value="Escuras"
+              />
+              <label for="Q04a">Escuras</label>
+            </div>
+            <div class="op">
+              <input
+                type="radio"
+                name="Q04"
+                id="Q04b"
+                required
+                value="Claras"
+              />
+              <label for="Q04b">Claras</label>
+            </div>
+          </div>
+
+          <!--label>Baseado nas suas respostas eu sugiro essa cor:</label>
+            <input
+            type="color"
+            name="value_color_suggestion"
+            id="value_color_suggestion"
+            disabled
+            />
+            <label class="suggestion_feedback">O que achou?</label-->
+
+          <div class="suggestion_btns">
+            <button class="btn_send_infos" type="button">Enviar</button>
+            <!--button class="btn_suggestion_color" type="button">Salvar</button>
+            <button class="btn_nosuggestion_color" type="button">
+              Não gostei
+            </button-->
+          </div>
+        </div>
+
+        <button class="btn_close_suggestion_color" type="button">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </form>
+    </section>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/paleta.js"></script>
   </body>
