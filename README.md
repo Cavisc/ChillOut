@@ -71,7 +71,7 @@ O site foi desenvolvido utilizando as seguintes tecnologias:
    - Se gostar da cor aperte em **Salvar**.
    - Senão, aperte em **Não gostei**.
 
-*OBS: Por se tratar apenas do **front-end**, algumas dessas instruções pode não funcionar.*
+*OBS: Por se tratar apenas do **front-end**, algumas dessas instruções podem não funcionar.*
 
 ## Como Executar o Projeto
 
